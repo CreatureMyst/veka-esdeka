@@ -1,0 +1,16 @@
+{
+    "name": "creaturemyst/veka-esdeka",
+    "description": "Reaaly great VK SDK on PHP",
+    "authors": [
+        {
+            "name": "Dima Trish",
+            "email": "git@dimatrish.ru"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "autoload": {
+        "psr-4": { "CreatureMyst\\VekaEsdeka": "src/" }
+    }
+}
