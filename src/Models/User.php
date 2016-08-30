@@ -2,7 +2,9 @@
 
 namespace Creaturemyst\Models;
 
-class User
+use Creaturemyst\VekaEsdeka\Interfaces\EntityInterface;
+
+class User implements EntityInterface
 {
     const
         SEX_UNKNOWN = 0,
@@ -36,6 +38,8 @@ class User
     protected $nickname;
     protected $timezone;
     protected $screenName;
+
+    protected $isPersisted = false;
 
     /**
      * @return integer
@@ -466,6 +470,23 @@ class User
     public function setScreenName($screenName)
     {
         $this->screenName = $screenName;
+        return $this;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function isPersisted() : boolean
+    {
+        return $this->isPersisted;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function setIsPersisted(boolean $isPersisted) : EntityInterface
+    {
+        $this->isPersisted = $isPersisted;
         return $this;
     }
 }
